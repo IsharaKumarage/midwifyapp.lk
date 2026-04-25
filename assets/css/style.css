@@ -812,6 +812,7 @@ p {
   width: 3px;
   background: linear-gradient(to bottom, var(--pink), var(--pink-dark));
   border-radius: 3px;
+  box-shadow: 0 0 15px rgba(240, 25, 131, 0.4);
 }
 
 .milestone-item {
@@ -819,6 +820,7 @@ p {
   gap: 2rem;
   padding-bottom: 3rem;
   position: relative;
+  perspective: 1000px;
 }
 
 .milestone-item:last-child {
@@ -836,29 +838,56 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  box-shadow: 0 0 0 6px var(--pink-xs);
+  box-shadow: 0 0 0 6px var(--pink-xs), 0 0 10px rgba(240, 25, 131, 0.2);
   z-index: 1;
   position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.milestone-item:hover .milestone-dot {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 0 8px rgba(240, 25, 131, 0.15), 0 0 25px rgba(240, 25, 131, 0.5);
 }
 
 .milestone-dot.completed {
   background: linear-gradient(135deg, var(--pink), var(--pink-dark));
-  border-color: var(--pink);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 0 0 6px var(--pink-xs), 0 0 20px rgba(240, 25, 131, 0.4);
 }
 
 .milestone-content {
   background: var(--white);
   border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   flex: 1;
   box-shadow: var(--shadow);
-  transition: all var(--transition);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--pink), var(--pink-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .milestone-content:hover {
-  transform: translateX(6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateX(12px) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(240, 25, 131, 0.12);
+  border-color: var(--pink);
+}
+
+.milestone-content:hover::before {
+  opacity: 1;
 }
 
 .milestone-meta {
