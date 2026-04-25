@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Domain – Midwify | SLIIT Research</title>
+    <meta name="description"
+        content="Explore the research domain of Midwify: literature survey, research gap, problem statement, objectives, methodology, and technologies." />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/images/logo.png" />
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <div class="nav-logo-wrap"><img src="assets/images/logo.png" alt="Midwify" /></div>
+                <span class="nav-wordmark">mid<span>wify</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="milestones.html">Milestones</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="presentations.html">Presentations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Domain</span></div>
+            <h1>Research Domain</h1>
+            <p>Literature, gaps, objectives, methodology and technology at the core of our research.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="domain-tabs fade-in" role="tablist">
+                <button class="tab-btn active" data-tab="tab-literature" role="tab">📚 Literature Survey</button>
+                <button class="tab-btn" data-tab="tab-gap" role="tab">🔭 Research Gap</button>
+                <button class="tab-btn" data-tab="tab-problem" role="tab">❓ Research Problem</button>
+                <button class="tab-btn" data-tab="tab-objectives" role="tab">🎯 Objectives</button>
+                <button class="tab-btn" data-tab="tab-methodology" role="tab">🔬 Methodology</button>
+                <button class="tab-btn" data-tab="tab-technologies" role="tab">⚙️ Technologies</button>
+            </div>
+
+            <!-- Tab 1: Literature -->
+            <div id="tab-literature" class="tab-panel active" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 01</span>
+                    <h2>Literature Survey</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="grid-2" style="gap:2.5rem;align-items:start;">
+                    <div class="fade-in">
+                        <p>The application of machine learning to maternal healthcare has gained significant traction.
+                            Assaduzzaman et al. (2023) demonstrated that ensemble classifiers such as Random Forest and
+                            XGBoost outperform traditional logistic regression in predicting maternal risk levels using
+                            routine vital signs. Harnal et al. (2025) explored SVMs for classifying gestational
+                            complications, achieving accuracy rates exceeding 91% on South Asian clinical datasets —
+                            directly underpinning our first research component.</p>
+                        <p>Infant cranial health monitoring has also seen advances through AI computer vision. Nakahari
+                            et al. (2023) established quantitative indices — the Cranial Vault Asymmetry Index (CVAI)
+                            and Cephalic Index (CI) — as reliable markers for detecting plagiocephaly in newborns.
+                            CNN-based 2D photographic analysis has demonstrated diagnostic accuracy comparable to
+                            clinical gold standards, yet no bilingual, smartphone-accessible tool exists for
+                            non-specialist caregivers.</p>
+                    </div>
+                    <div class="fade-in">
+                        <p>Fetal health monitoring via Cardiotocography (CTG) remains a cornerstone of intrapartum care.
+                            Tabatabaei et al. (2023) found that gradient boosting and neural network approaches
+                            significantly reduced false-negative rates in detecting fetal distress. The Ayres-de-Campos
+                            (2000) benchmark dataset of 2,126 CTG records underpins our third component's training
+                            pipeline, enabling Normal/Suspect/Pathological classification.</p>
+                        <p>Virtual Reality for medical skills training outperforms mannequin-based training in skill
+                            transfer, retention, and learner confidence — particularly for neonatal procedures. Our
+                            fourth component translates these findings into a Unity-based OpenXR training environment
+                            validated through System Usability Scale (SUS) assessments.</p>
+                        <div class="card" style="background:var(--bg-alt);box-shadow:none;margin-top:1rem;">
+                            <h4>Key References</h4>
+                            <ul
+                                style="margin-top:0.75rem;padding-left:1.25rem;color:var(--text-muted);font-size:0.875rem;line-height:2.1;">
+                                <li>Assaduzzaman et al. (2023) – ML for maternal risk</li>
+                                <li>Harnal et al. (2025) – SVM in gestational complications</li>
+                                <li>Nakahari et al. (2023) – CVAI &amp; CI cranial indices</li>
+                                <li>Tabatabaei et al. (2023) – CTG classification review</li>
+                                <li>Ayres-de-Campos et al. (2000) – CTG benchmark dataset</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Gap -->
+            <div id="tab-gap" class="tab-panel" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 02</span>
+                    <h2>Research Gap</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="grid-2" style="gap:1.5rem;">
+                    <div class="card fade-in" style="border-left:4px solid var(--danger);">
+                        <div class="card-icon" style="background:rgba(239,68,68,0.08);">📵</div>
+                        <h3>No Midwife-Focused ML Apps</h3>
+                        <p>Existing maternal risk tools target hospital clinicians, not community-level midwives
+                            operating with limited infrastructure.</p>
+                    </div>
+                    <div class="card fade-in" style="border-left:4px solid var(--pink);">
+                        <div class="card-icon">📊</div>
+                        <h3>No Real-Time Risk Visualization</h3>
+                        <p>Current systems lack intuitive dashboards that translate ML outputs into actionable clinical
+                            guidance for field practitioners.</p>
+                    </div>
+                    <div class="card fade-in" style="border-left:4px solid var(--danger);">
+                        <div class="card-icon" style="background:rgba(239,68,68,0.08);">🔔</div>
+                        <h3>No Voice or Haptic Alerts</h3>
+                        <p>Alert mechanisms are visual-only; no voice or haptic notification system exists for
+                            hands-free midwifery workflows.</p>
+                    </div>
+                    <div class="card fade-in" style="border-left:4px solid var(--pink);">
+                        <div class="card-icon">🌐</div>
+                        <h3>No Bilingual (Sinhala/Tamil) Tools</h3>
+                        <p>All identified health applications are English-medium, excluding Sri Lanka's Sinhala- and
+                            Tamil-speaking population.</p>
+                    </div>
+                    <div class="card fade-in" style="border-left:4px solid var(--danger);">
+                        <div class="card-icon" style="background:rgba(239,68,68,0.08);">📡</div>
+                        <h3>No Offline-Capable AI for Rural Sri Lanka</h3>
+                        <p>Cloud-dependent AI tools are impractical in rural areas where internet access is unreliable.
+                            No offline-first ML deployment exists.</p>
+                    </div>
+                    <div class="card fade-in" style="border-left:4px solid var(--pink);">
+                        <div class="card-icon">🥽</div>
+                        <h3>No Integrated VR + Postnatal Tools</h3>
+                        <p>No single platform combines immersive VR newborn-handling training with a postnatal care
+                            companion app.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Problem -->
+            <div id="tab-problem" class="tab-panel" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 03</span>
+                    <h2>Research Problem</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="grid-2" style="gap:3rem;align-items:center;">
+                    <div class="fade-in">
+                        <p style="font-size:1.05rem;line-height:1.85;margin-bottom:1.5rem;">Sri Lankan midwives — who
+                            serve as the primary maternal healthcare touchpoint for a large proportion of the country's
+                            rural population — currently operate without intelligent, real-time digital decision-support
+                            tools. Critical clinical judgments including maternal risk stratification, infant cranial
+                            health assessment, fetal distress detection, and newborn handling training are executed
+                            through manual, experience-dependent processes prone to variability, delay, and error. No
+                            locally adapted, bilingual, offline-capable digital platform accounts for the unique
+                            linguistic, infrastructural, and clinical conditions of Sri Lanka's midwifery sector.</p>
+                        <div class="card"
+                            style="background:linear-gradient(135deg,var(--dark-3),var(--dark-2));border:none;">
+                            <h3
+                                style="color:white;font-size:0.9rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem;">
+                                Research Question</h3>
+                            <p style="color:rgba(255,255,255,0.85);line-height:1.75;font-size:0.95rem;">How can
+                                integrated digital technologies — including ML, computer vision, mobile development, and
+                                VR — be effectively designed, developed, and evaluated to enhance midwives'
+                                decision-making capacity and care delivery in the Sri Lankan healthcare context?</p>
+                        </div>
+                    </div>
+                    <div class="fade-in" style="display:flex;flex-direction:column;gap:1.25rem;">
+                        <div
+                            style="background:var(--bg-alt);border-radius:var(--radius);padding:1.5rem;border-left:4px solid var(--danger);">
+                            <h4>Core Challenge</h4>
+                            <p style="margin-top:0.4rem;">Midwives lack real-time intelligent tools for detecting
+                                maternal and fetal risks.</p>
+                        </div>
+                        <div
+                            style="background:var(--bg-alt);border-radius:var(--radius);padding:1.5rem;border-left:4px solid var(--warning);">
+                            <h4>Context</h4>
+                            <p style="margin-top:0.4rem;">Rural Sri Lanka, limited connectivity, bilingual population,
+                                primary care setting.</p>
+                        </div>
+                        <div
+                            style="background:var(--bg-alt);border-radius:var(--radius);padding:1.5rem;border-left:4px solid var(--success);">
+                            <h4>Proposed Solution</h4>
+                            <p style="margin-top:0.4rem;">Four integrated digital tools covering risk prediction, infant
+                                monitoring, CTG assessment, and VR training.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Objectives -->
+            <div id="tab-objectives" class="tab-panel" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 04</span>
+                    <h2>Objectives</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="card fade-in" style="margin-bottom:2rem;border-left:5px solid var(--pink);">
+                    <h3>Main Objective</h3>
+                    <p style="font-size:1rem;margin-top:0.5rem;">To design, develop, and evaluate four integrated
+                        digital tools — leveraging ML, AI computer vision, mobile technology, and VR — that enhance the
+                        clinical decision-making capacity, diagnostic accuracy, and practical training of midwives
+                        within the Sri Lankan maternal healthcare system.</p>
+                </div>
+                <div class="grid-2" style="gap:1.5rem;">
+                    <div class="card fade-in">
+                        <div class="card-icon">📱</div>
+                        <h3>Component 1 – Maternal Risk ML</h3>
+                        <ul
+                            style="margin-top:0.75rem;padding-left:1.25rem;color:var(--text-muted);font-size:0.875rem;line-height:2.1;">
+                            <li>Collect and preprocess a Sri Lankan maternal clinical dataset</li>
+                            <li>Train Random Forest and XGBoost for risk classification</li>
+                            <li>Deploy via TensorFlow Lite on a Flutter mobile app</li>
+                            <li>Implement real-time visualization with voice/haptic alerts</li>
+                            <li>Evaluate accuracy and usability with midwifery practitioners</li>
+                        </ul>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">👶</div>
+                        <h3>Component 2 – Infant Cranial AI</h3>
+                        <ul
+                            style="margin-top:0.75rem;padding-left:1.25rem;color:var(--text-muted);font-size:0.875rem;line-height:2.1;">
+                            <li>Build a CNN-based infant head image classification model</li>
+                            <li>Implement CVAI and CI metric computation from 2D photos</li>
+                            <li>Develop a bilingual Sinhala/Tamil React Native application</li>
+                            <li>Integrate posture assessment functionality</li>
+                            <li>Validate with paediatric experts and caregivers</li>
+                        </ul>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">🫀</div>
+                        <h3>Component 3 – CTG Assessment</h3>
+                        <ul
+                            style="margin-top:0.75rem;padding-left:1.25rem;color:var(--text-muted);font-size:0.875rem;line-height:2.1;">
+                            <li>Preprocess the Ayres-de-Campos CTG benchmark dataset</li>
+                            <li>Train SVM and ensemble classifiers for 3-class fetal status</li>
+                            <li>Expose model via a Flask REST API backend</li>
+                            <li>Build a dashboard with Chart.js visualizations</li>
+                            <li>Evaluate against clinical baselines</li>
+                        </ul>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">🥽</div>
+                        <h3>Component 4 – VR Training</h3>
+                        <ul
+                            style="margin-top:0.75rem;padding-left:1.25rem;color:var(--text-muted);font-size:0.875rem;line-height:2.1;">
+                            <li>Model a newborn handling simulation in Unity/Blender</li>
+                            <li>Implement OpenXR-compatible VR interactions</li>
+                            <li>Integrate Google Speech API for voice instructions</li>
+                            <li>Develop a companion postnatal Flutter mobile app</li>
+                            <li>Conduct SUS testing with 15–20 midwifery students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Methodology -->
+            <div id="tab-methodology" class="tab-panel" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 05</span>
+                    <h2>Methodology</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="grid-2" style="gap:2.5rem;align-items:start;">
+                    <div class="fade-in">
+                        <p>The research employs an iterative, human-centred development methodology. Structured
+                            requirement-gathering sessions are conducted with practising midwives, midwifery educators,
+                            and healthcare administrators. Semi-structured interviews and observational workflows are
+                            analyzed to identify priority clinical pain points and translate them into precise
+                            functional and non-functional requirements for each of the four components.</p>
+                        <p>Dataset collection and preprocessing form the technical foundation. Maternal records are
+                            aggregated, cleaned using Pandas, and balanced via SMOTE oversampling. A curated infant
+                            photographic dataset is labeled by paediatric specialists and augmented through rotation and
+                            brightness variation. The Ayres-de-Campos CTG dataset serves as the benchmark for the fetal
+                            health component. All ML models — Random Forest, CNN — are trained in TensorFlow and
+                            compressed to TFLite for on-device offline inference.</p>
+                        <p>Development follows Flutter and React Native frameworks for mobile, with Firebase providing
+                            authentication and real-time sync. The VR component is built in Unity 2023 LTS with OpenXR,
+                            modeled in Blender, and tested across Meta Quest and PC VR headsets. Summative SUS
+                            evaluation involves 15–20 midwifery students from an affiliated healthcare institution.</p>
+                    </div>
+                    <div class="fade-in" style="display:flex;flex-direction:column;gap:1.25rem;">
+                        <div class="card" style="border-top:4px solid var(--pink);">
+                            <h4>Phase 1 · Requirements</h4>
+                            <p style="font-size:0.875rem;margin-top:0.4rem;">Midwife interviews, workflow analysis,
+                                stakeholder mapping, feature specification.</p>
+                        </div>
+                        <div class="card" style="border-top:4px solid var(--pink-light);">
+                            <h4>Phase 2 · Data & Modelling</h4>
+                            <p style="font-size:0.875rem;margin-top:0.4rem;">Dataset collection, preprocessing (Pandas,
+                                SMOTE), model training (RF, CNN, SVM, TFLite).</p>
+                        </div>
+                        <div class="card" style="border-top:4px solid var(--success);">
+                            <h4>Phase 3 · Development</h4>
+                            <p style="font-size:0.875rem;margin-top:0.4rem;">Flutter & React Native apps, Flask API,
+                                Unity/OpenXR VR environment, Firebase integration.</p>
+                        </div>
+                        <div class="card" style="border-top:4px solid var(--warning);">
+                            <h4>Phase 4 · Evaluation</h4>
+                            <p style="font-size:0.875rem;margin-top:0.4rem;">SUS usability testing, ML accuracy
+                                benchmarking, expert clinical review, final iteration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 6: Technologies -->
+            <div id="tab-technologies" class="tab-panel" role="tabpanel">
+                <div class="section-header fade-in">
+                    <span class="section-label">Domain · 06</span>
+                    <h2>Technologies Used</h2>
+                    <div class="divider"></div>
+                    <p>A curated technology stack enabling each research component with proven, production-grade tools.
+                    </p>
+                </div>
+                <div class="fade-in" style="overflow-x:auto;">
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>Technology</th>
+                                <th>Category</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Flutter</strong></td>
+                                <td><span class="tech-badge">Mobile</span></td>
+                                <td>Cross-platform mobile app development for components 1 and 4</td>
+                            </tr>
+                            <tr>
+                                <td><strong>React Native</strong></td>
+                                <td><span class="tech-badge">Mobile</span></td>
+                                <td>Bilingual mobile app for infant cranial monitoring (Component 2)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Firebase</strong></td>
+                                <td><span class="tech-badge">Backend</span></td>
+                                <td>Authentication, real-time database, and cloud storage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Python (Scikit-learn, Pandas)</strong></td>
+                                <td><span class="tech-badge">ML / Data</span></td>
+                                <td>Data preprocessing, feature engineering, model training (RF, SVM)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TensorFlow Lite</strong></td>
+                                <td><span class="tech-badge">ML / Mobile</span></td>
+                                <td>On-device, offline-capable inference deployment of ML models</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unity Engine</strong></td>
+                                <td><span class="tech-badge">VR / 3D</span></td>
+                                <td>VR environment creation and interaction scripting (Component 4)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OpenXR</strong></td>
+                                <td><span class="tech-badge">VR</span></td>
+                                <td>Cross-platform XR abstraction layer for Meta Quest and PC VR</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Blender</strong></td>
+                                <td><span class="tech-badge">3D Design</span></td>
+                                <td>3D modelling of newborn and clinical environment for VR</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flask API</strong></td>
+                                <td><span class="tech-badge">Backend</span></td>
+                                <td>RESTful API serving CTG classification predictions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chart.js</strong></td>
+                                <td><span class="tech-badge">Frontend</span></td>
+                                <td>Interactive data visualization for the CTG assessment dashboard</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Figma</strong></td>
+                                <td><span class="tech-badge">Design</span></td>
+                                <td>UI/UX wireframing and prototyping for all applications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Android Studio</strong></td>
+                                <td><span class="tech-badge">Tooling</span></td>
+                                <td>Native Android build environment and device testing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SQLite</strong></td>
+                                <td><span class="tech-badge">Database</span></td>
+                                <td>Local on-device storage for offline patient records</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Speech API</strong></td>
+                                <td><span class="tech-badge">AI / Voice</span></td>
+                                <td>Voice-guided interaction in the VR training environment</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>mid<span>wify</span></h3>
+                    <p>A BSc IT research project digitalizing midwifery care in Sri Lanka through AI, VR, and mobile
+                        innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="domain.html">Domain</a></li>
+                        <li><a href="milestones.html">Milestones</a></li>
+                        <li><a href="documents.html">Documents</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="presentations.html">Presentations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Institution</h4>
+                    <ul>
+                        <li><a href="#">SLIIT Sri Lanka</a></li>
+                        <li><a href="#">Dept. of IT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Midwify Research Group · SLIIT Sri Lanka</span>
+                <span>Supervised by <a href="about.html">Mr. D. Thanaweera Araghchi & Mrs. N. Gamage</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
