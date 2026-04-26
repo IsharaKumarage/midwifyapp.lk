@@ -645,34 +645,15 @@ p {
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.75rem;
   box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
+  transition: all var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(240, 25, 131, 0.12);
-  border-color: rgba(240, 25, 131, 0.3);
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(240, 25, 131, 0.04), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.card:hover::before {
-  opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(240, 25, 131, 0.2);
 }
 
 .card-icon {
@@ -769,49 +750,25 @@ p {
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1.5px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all var(--transition);
   text-align: center;
-  position: relative;
-}
-
-.team-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--pink), var(--pink-dark));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
 }
 
 .team-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(240, 25, 131, 0.15);
-  border-color: rgba(240, 25, 131, 0.3);
-}
-
-.team-card:hover::after {
-  opacity: 1;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .team-photo {
   width: 100%;
-  height: 250px;
+  height: 230px;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.5s ease;
-}
-
-.team-card:hover .team-photo {
-  transform: scale(1.08);
 }
 
 .team-photo-placeholder {
   width: 100%;
-  height: 250px;
+  height: 230px;
   background: linear-gradient(135deg, var(--dark-3), var(--dark-2));
   display: flex;
   align-items: center;
