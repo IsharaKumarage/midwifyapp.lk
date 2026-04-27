@@ -4,11 +4,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Midwify – Digitalizing Midwifery Care | AR, VR & ML Solutions</title>
+  <title>Midwify – Digitalizing Midwifery Care | AR, VR &amp; ML Solutions</title>
   <meta name="description"
     content="Midwify — a SLIIT BSc IT research project building ML, AI, VR and mobile tools to digitalize midwifery care across Sri Lanka." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/images/logo.jpeg" />
+  <style>
+    /* ── Smooth scroll ── */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ── Nav active highlight ── */
+    .nav-menu a.spa-active {
+      color: var(--pink) !important;
+      font-weight: 700;
+    }
+
+    /* ── Section divider ── */
+    .spa-section-divider {
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--pink), var(--pink-light), transparent);
+      opacity: 0.35;
+    }
+
+    /* ── Section anchor offset for sticky nav ── */
+    .spa-section {
+      scroll-margin-top: 80px;
+    }
+
+    /* ── Page hero for inner sections ── */
+    .section-page-hero {
+      background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 60%, #1a0a1a 100%);
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(240, 25, 131, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .section-page-hero h2 {
+      color: white;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-page-hero p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1rem;
+      max-width: 560px;
+    }
+
+    /* ── Timeline (milestones) ── */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.65rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--pink), rgba(240, 25, 131, 0.1));
+    }
+
+    /* ── Doc cards ── */
+    .doc-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      transition: box-shadow .2s, border-color .2s;
+    }
+
+    .doc-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--pink);
+    }
+
+    .doc-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .doc-info {
+      flex: 1;
+    }
+
+    .doc-info h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .doc-info p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .doc-download {
+      flex-shrink: 0;
+      background: var(--pink);
+      color: white !important;
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+
+    .doc-download:hover {
+      opacity: 0.85;
+    }
+
+    .doc-icon.pdf {
+      color: #e53e3e;
+    }
+
+    .doc-icon.word {
+      color: #2b6cb0;
+    }
+
+    /* ── Contact form ── */
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      font-family: inherit;
+      font-size: 0.93rem;
+      color: var(--text);
+      transition: border-color .2s;
+      box-sizing: border-box;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--pink);
+      outline: none;
+    }
+
+    .contact-form label {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,21 +184,19 @@
   <!-- ── Navbar ── -->
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="container">
-      <a href="index.html" class="nav-brand">
-        <div class="nav-logo-wrap">
-          <img src="assets/images/logo.jpeg" alt="Midwify Logo" />
-        </div>
+      <a href="#home" class="nav-brand">
+        <div class="nav-logo-wrap"><img src="assets/images/logo.jpeg" alt="Midwify Logo" /></div>
         <span class="nav-wordmark">mid<span>wify</span></span>
       </a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="domain.html">Domain</a></li>
-        <li><a href="milestones.html">Milestones</a></li>
-        <li><a href="documents.html">Documents</a></li>
-        <li><a href="presentations.html">Presentations</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" data-section="home">Home</a></li>
+        <li><a href="#domain" data-section="domain">Domain</a></li>
+        <li><a href="#milestones" data-section="milestones">Milestones</a></li>
+        <li><a href="#documents" data-section="documents">Documents</a></li>
+        <li><a href="#presentations" data-section="presentations">Presentations</a></li>
+        <li><a href="#gallery" data-section="gallery">Gallery</a></li>
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#contact" data-section="contact">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -40,27 +204,23 @@
     </div>
   </nav>
 
-  <!-- ── Hero ── -->
-  <section class="hero" id="hero">
+  <!-- ══════════════════════════════════════
+       § HOME
+  ══════════════════════════════════════ -->
+  <section class="hero spa-section" id="home">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">
-          🎓 SLIIT Sri Lanka &nbsp;·&nbsp; BSc IT (Interactive Media) &nbsp;·&nbsp; 2025
-        </div>
-        <h1>Digitalizing<br>Midwifery Care<br>with <em>AR, VR & ML</em></h1>
-        <p class="hero-desc">
-          Four integrated digital tools giving Sri Lankan midwives intelligent, real-time support
-          for maternal risk prediction, infant monitoring, fetal CTG assessment, and immersive VR training.
-        </p>
+        <div class="hero-badge">🎓 SLIIT Sri Lanka &nbsp;·&nbsp; BSc IT (Interactive Media) &nbsp;·&nbsp; 2025</div>
+        <h1>Digitalizing<br>Midwifery Care<br>with <em>AR, VR &amp; ML</em></h1>
+        <p class="hero-desc">Four integrated digital tools giving Sri Lankan midwives intelligent, real-time support for
+          maternal risk prediction, infant monitoring, fetal CTG assessment, and immersive VR training.</p>
         <div class="hero-cta">
-          <a href="domain.html" class="btn btn-primary">Explore Research</a>
-          <a href="documents.html" class="btn btn-outline">View Documents</a>
+          <a href="#domain" class="btn btn-primary">Explore Research</a>
+          <a href="#documents" class="btn btn-outline">View Documents</a>
         </div>
       </div>
     </div>
-
-    <!-- Floating App-Style Cards -->
     <div class="hero-phone" aria-hidden="true">
       <div class="phone-card">
         <div class="phone-card-label">Risk Distribution</div>
@@ -97,7 +257,6 @@
         </div>
       </div>
     </div>
-
     <div class="hero-scroll" aria-hidden="true">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 5v14M5 12l7 7 7-7" />
@@ -106,7 +265,7 @@
     </div>
   </section>
 
-  <!-- ── Stats Bar ── -->
+  <!-- Stats Bar -->
   <div class="stats-bar">
     <div class="container">
       <div class="grid-4">
@@ -118,8 +277,8 @@
           <div class="stat-label">Team Members</div>
         </div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-number" data-count="5">0</span>
-          <div class="stat-label">Key Milestones</div>
+        <div class="stat-item"><span class="stat-number" data-count="6">0</span>
+          <div class="stat-label">Milestones</div>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item"><span class="stat-number" data-count="2025">0</span>
@@ -129,7 +288,7 @@
     </div>
   </div>
 
-  <!-- ── Abstract ── -->
+  <!-- Abstract -->
   <section class="section" id="abstract">
     <div class="container">
       <div class="grid-2" style="align-items:center;gap:3.5rem;">
@@ -137,20 +296,15 @@
           <span class="section-label">Abstract</span>
           <h2>Bridging the Gap in Maternal Healthcare</h2>
           <div class="divider"></div>
-          <p style="margin-bottom:1rem;">
-            Sri Lanka's midwifery care system faces a critical digital divide. Frontline midwives lack access
-            to intelligent, real-time tools capable of detecting maternal risk factors, monitoring infant cranial
-            development, interpreting complex fetal health signals, and receiving immersive practical training.
-            Midwify directly confronts these systemic shortcomings by engineering four synergistic digital
-            solutions tailored for the Sri Lankan healthcare context.
-          </p>
-          <p style="margin-bottom:1.75rem;">
-            The Midwify platform comprises: a machine-learning-powered mobile app for real-time maternal risk
-            prediction; a bilingual AI platform for infant cranial deformity and posture monitoring; an automated
-            fetal health assessment system interpreting CTG data; and an immersive VR training environment
-            — delivering Sri Lanka's first offline-capable, multilingual digital midwifery ecosystem.
-          </p>
-          <a href="domain.html" class="btn btn-primary">Full Domain Study →</a>
+          <p style="margin-bottom:1rem;">Sri Lanka's midwifery care system faces a critical digital divide. Frontline
+            midwives lack access to intelligent, real-time tools capable of detecting maternal risk factors, monitoring
+            infant cranial development, interpreting complex fetal health signals, and receiving immersive practical
+            training.</p>
+          <p style="margin-bottom:1.75rem;">The Midwify platform comprises: a machine-learning-powered mobile app for
+            real-time maternal risk prediction; a bilingual AI platform for infant cranial deformity and posture
+            monitoring; an automated fetal health assessment system interpreting CTG data; and an immersive VR training
+            environment — delivering Sri Lanka's first offline-capable, multilingual digital midwifery ecosystem.</p>
+          <a href="#domain" class="btn btn-primary">Full Domain Study →</a>
         </div>
         <div class="fade-in" style="display:flex;flex-direction:column;gap:1.25rem;">
           <div class="card" style="border-left:4px solid var(--danger);">
@@ -174,7 +328,7 @@
     </div>
   </section>
 
-  <!-- ── Four Components ── -->
+  <!-- Four Components -->
   <section class="section section-alt" id="components">
     <div class="container">
       <div class="section-header centered fade-in">
@@ -184,7 +338,6 @@
         <p>Each component targets a distinct clinical need, together forming a complete digital midwifery ecosystem.</p>
       </div>
       <div class="grid-2" style="gap:1.75rem;">
-
         <div class="component-card fade-in">
           <div class="component-card-header">
             <div class="icon">📱</div>
@@ -196,16 +349,11 @@
           <div class="component-card-body">
             <p style="margin-bottom:1rem;">Real-time maternal risk classification for midwives using ensemble ML models
               deployed on a Flutter mobile app with offline TFLite inference.</p>
-            <div>
-              <span class="component-tag">🤖 Random Forest</span>
-              <span class="component-tag">📊 XGBoost</span>
-              <span class="component-tag">📱 Flutter</span>
-              <span class="component-tag">🔥 Firebase</span>
-              <span class="component-tag">⚡ TFLite</span>
-            </div>
+            <div><span class="component-tag">🤖 Random Forest</span><span class="component-tag">📊 XGBoost</span><span
+                class="component-tag">📱 Flutter</span><span class="component-tag">🔥 Firebase</span><span
+                class="component-tag">⚡ TFLite</span></div>
           </div>
         </div>
-
         <div class="component-card fade-in">
           <div class="component-card-header">
             <div class="icon">👶</div>
@@ -217,35 +365,26 @@
           <div class="component-card-body">
             <p style="margin-bottom:1rem;">Bilingual (Sinhala/Tamil) AI app detecting infant cranial deformity and
               postural imbalance using CNN-based computer vision analysis.</p>
-            <div>
-              <span class="component-tag">🧠 CNN</span>
-              <span class="component-tag">👁️ Computer Vision</span>
-              <span class="component-tag">🌐 Bilingual</span>
-              <span class="component-tag">📱 React Native</span>
-            </div>
+            <div><span class="component-tag">🧠 CNN</span><span class="component-tag">👁️ Computer Vision</span><span
+                class="component-tag">🌐 Bilingual</span><span class="component-tag">📱 React Native</span></div>
           </div>
         </div>
-
         <div class="component-card fade-in">
           <div class="component-card-header">
             <div class="icon">🫀</div>
             <div>
               <div class="comp-num">Component 03</div>
-              <h3>Automated Fetal CTG Assessment</h3>
+              <h3>Fetal Health Risk Assessment</h3>
             </div>
           </div>
           <div class="component-card-body">
             <p style="margin-bottom:1rem;">Automated CTG data interpretation classifying fetal health into Normal,
               Suspect, or Pathological states — reducing diagnostic error.</p>
-            <div>
-              <span class="component-tag">📈 CTG Analysis</span>
-              <span class="component-tag">🤖 SVM</span>
-              <span class="component-tag">🐍 Scikit-learn</span>
-              <span class="component-tag">📊 Chart.js</span>
-            </div>
+            <div><span class="component-tag">📈 CTG Analysis</span><span class="component-tag">🤖 Random
+                Forest</span><span class="component-tag">👁️ Computer Vision</span><span class="component-tag">📱
+                Flutter</span></div>
           </div>
         </div>
-
         <div class="component-card fade-in">
           <div class="component-card-header">
             <div class="icon">🥽</div>
@@ -257,119 +396,659 @@
           <div class="component-card-body">
             <p style="margin-bottom:1rem;">Immersive Unity/OpenXR VR simulation for newborn handling training with
               Blender assets and interactive voice guidance.</p>
-            <div>
-              <span class="component-tag">🎮 Unity</span>
-              <span class="component-tag">🥽 OpenXR</span>
-              <span class="component-tag">🎨 Blender</span>
-            </div>
+            <div><span class="component-tag">🎮 Unity</span><span class="component-tag">🥽 OpenXR</span><span
+                class="component-tag">🎨 Blender</span></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── Risk Cards (App-style) ── -->
-  <section class="section" id="significance">
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § DOMAIN
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="domain">
     <div class="container">
-      <div class="section-header centered fade-in">
-        <span class="section-label">Why Midwify</span>
-        <h2>Addressing Real Clinical Needs</h2>
+      <span class="section-label" style="color:var(--pink);">Research Domain</span>
+      <h2>Domain &amp; Literature Review</h2>
+      <p>In-depth exploration of the research problem, existing solutions, and the technical approach behind each
+        component.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <!-- Literature Gap -->
+      <div class="section-header fade-in" style="max-width:680px;margin-bottom:2rem;">
+        <span class="section-label">Research Gap</span>
+        <h2>Gaps in Existing Solutions</h2>
         <div class="divider"></div>
       </div>
-      <div class="grid-3">
-        <div class="card fade-in">
-          <div class="card-icon" style="background:rgba(16,185,129,0.08);">🌏</div>
-          <h3>Rural Healthcare Access</h3>
-          <p>Lightweight, offline-capable AI tools extend quality maternal care to underserved rural communities.</p>
+      <div class="grid-3 fade-in" style="margin-bottom:4rem;">
+        <div class="card" style="border-top:3px solid #EF4444;">
+          <div class="card-icon" style="background:rgba(239,68,68,0.08);">⚠️</div>
+          <h3>No Integrated ML Risk Tools</h3>
+          <p>Existing maternal health apps focus on single parameters. No platform combines multi-factor ML risk scoring
+            for Sri Lankan midwives in an offline, bilingual format.</p>
         </div>
-        <div class="card fade-in">
-          <div class="card-icon">🌐</div>
-          <h3>Bilingual Inclusivity</h3>
-          <p>Sinhala and Tamil support ensures tools are accessible across Sri Lanka's linguistically diverse
-            population.</p>
+        <div class="card" style="border-top:3px solid #F59E0B;">
+          <div class="card-icon" style="background:rgba(245,158,11,0.08);">🔍</div>
+          <h3>Limited Infant Monitoring</h3>
+          <p>No accessible, AI-driven mobile tool exists for detecting infant cranial deformity or postural asymmetry in
+            resource-limited clinical environments.</p>
         </div>
-        <div class="card fade-in">
-          <div class="card-icon" style="background:rgba(239,68,68,0.08);">📉</div>
-          <h3>Reducing Maternal Risk</h3>
-          <p>Early ML-driven risk detection can substantially reduce maternal and neonatal mortality in primary care.
-          </p>
+        <div class="card" style="border-top:3px solid var(--pink);">
+          <div class="card-icon">🥽</div>
+          <h3>No Integrated VR + Postnatal Tools</h3>
+          <p>No single platform combines immersive VR newborn-handling training with digital learning support for
+            midwifery students in South Asia.</p>
         </div>
-        <div class="card fade-in">
-          <div class="card-icon" style="background:rgba(99,102,241,0.08);">🎓</div>
-          <h3>VR Training Innovation</h3>
-          <p>VR newborn handling simulation gives midwifery students hands-on experience without clinical risk.</p>
+      </div>
+
+      <!-- Research Objectives -->
+      <div class="section-header fade-in" style="max-width:680px;margin-bottom:2rem;">
+        <span class="section-label">Objectives</span>
+        <h2>Research Objectives</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-2 fade-in" style="margin-bottom:4rem;">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Component 01 — Maternal Risk</h3>
+          <ul style="font-size:0.9rem;color:var(--text-2);padding-left:1.2rem;line-height:1.7;">
+            <li>Train Random Forest &amp; XGBoost on clinical datasets</li>
+            <li>Deploy via TFLite on Flutter for offline use</li>
+            <li>Real-time dashboard with Firebase sync</li>
+          </ul>
         </div>
-        <div class="card fade-in">
-          <div class="card-icon">🔗</div>
-          <h3>Integrated Ecosystem</h3>
-          <p>One unified platform covering prediction, monitoring, assessment, and training eliminates fragmentation.
-          </p>
+        <div class="card">
+          <div class="card-icon">👶</div>
+          <h3>Component 02 — Infant Cranial AI</h3>
+          <ul style="font-size:0.9rem;color:var(--text-2);padding-left:1.2rem;line-height:1.7;">
+            <li>Build CNN model for CVAI and CI index assessment</li>
+            <li>Deliver bilingual Sinhala/Tamil React Native app</li>
+            <li>Offline-capable with on-device inference</li>
+          </ul>
         </div>
-        <div class="card fade-in">
-          <div class="card-icon" style="background:rgba(245,158,11,0.08);">🔬</div>
-          <h3>Evidence-Based</h3>
-          <p>Built on peer-reviewed foundations from Assaduzzaman (2023), Harnal (2025), Nakahari (2023) and more.</p>
+        <div class="card">
+          <div class="card-icon">🫀</div>
+          <h3>Component 03 — Fetal CTG Assessment</h3>
+          <ul style="font-size:0.9rem;color:var(--text-2);padding-left:1.2rem;line-height:1.7;">
+            <li>Extract CTG parameters with OpenCV &amp; PyTesseract</li>
+            <li>Classify using SMOTE-enhanced Random Forest</li>
+            <li>Mobile-compatible offline interface</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">🥽</div>
+          <h3>Component 04 — VR Training</h3>
+          <ul style="font-size:0.9rem;color:var(--text-2);padding-left:1.2rem;line-height:1.7;">
+            <li>Develop Unity/OpenXR VR simulation environment</li>
+            <li>Create 3D assets using Blender for realism</li>
+            <li>Interactive newborn-handling training scenarios</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Technology Stack -->
+      <div class="section-header centered fade-in" style="margin-bottom:2rem;">
+        <span class="section-label">Technologies</span>
+        <h2>Technology Stack</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-4 fade-in">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🤖</div>
+          <h4 style="font-size:0.95rem;">Machine Learning</h4>
+          <p style="font-size:0.82rem;color:var(--muted);">Random Forest, XGBoost, CNN, SVM, TFLite</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">📱</div>
+          <h4 style="font-size:0.95rem;">Mobile Development</h4>
+          <p style="font-size:0.82rem;color:var(--muted);">Flutter, React Native, Firebase</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🥽</div>
+          <h4 style="font-size:0.95rem;">XR &amp; 3D</h4>
+          <p style="font-size:0.82rem;color:var(--muted);">Unity, OpenXR, Blender, Meta Quest</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">👁️</div>
+          <h4 style="font-size:0.95rem;">Computer Vision</h4>
+          <p style="font-size:0.82rem;color:var(--muted);">OpenCV, PyTesseract, TensorFlow</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Team Preview ── -->
-  <section class="section section-alt" id="team-preview">
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § MILESTONES
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="milestones">
     <div class="container">
-      <div class="grid-2" style="align-items:center;gap:3.5rem;">
-        <div class="fade-in">
-          <span class="section-label">The Team</span>
-          <h2>BSc IT Students at SLIIT Sri Lanka</h2>
-          <div class="divider"></div>
-          <p style="margin-bottom:1rem;">Four final-year BSc IT (Interactive Media) students building the future of Sri
-            Lankan midwifery care, under the supervision of experienced academic faculty.</p>
-          <p style="margin-bottom:1.75rem;">Supervised by <strong>Mr. Didula Thanaweera Araghchi</strong> and
-            <strong>Mrs. Narmada Gamage</strong>, Department of Information Technology, SLIIT.
-          </p>
-          <a href="about.html" class="btn btn-primary">Meet the Team →</a>
+      <span class="section-label" style="color:var(--pink);">Timeline</span>
+      <h2>Research Milestones</h2>
+      <p>Tracking our journey from proposal to final assessment across six key milestones.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="stats-bar" style="border-radius:var(--radius-lg);margin-bottom:3.5rem;padding:2rem 0;">
+        <div class="container">
+          <div class="grid-4">
+            <div class="stat-item"><span class="stat-number" data-count="6">0</span>
+              <div class="stat-label">Total Milestones</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="4">0</span>
+              <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="2">0</span>
+              <div class="stat-label">Remaining</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-number" data-count="2026">0</span>
+              <div class="stat-label">Target Year</div>
+            </div>
+          </div>
         </div>
-        <div class="grid-2 fade-in" style="gap:1rem;">
-          <div
-            style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1.5px solid var(--border);text-align:center;box-shadow:var(--shadow-sm);">
-            <div
-              style="width:56px;height:56px;border-radius:50%;overflow:hidden;margin:0 auto 0.75rem;border:2px solid var(--pink);">
-              <img src="assets/images/team/mahawagedara.jpg" alt="Mahawegedara"
-                style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+
+      <div class="timeline">
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot completed"><span style="filter:brightness(10);">✅</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Topic Registration &amp; Proposal</h3>
+              <span class="milestone-date">July – Sept 2025</span>
+              <span class="milestone-status status-completed">Completed</span>
             </div>
-            <strong style="font-size:0.875rem;">Mahawegedara M.K.S.P</strong>
-            <p style="font-size:0.78rem;margin-top:0.2rem;">VR Training App</p>
+            <p>Topic Assessment Form submitted (June 30 – July 16), Project Charter finalized (July 23), and formal
+              Proposal Presentation successfully completed (Sept 8–12) outlining the four digital tools for Sri Lankan
+              midwifery care.</p>
           </div>
-          <div
-            style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1.5px solid var(--border);text-align:center;box-shadow:var(--shadow-sm);">
-            <div
-              style="width:56px;height:56px;border-radius:50%;overflow:hidden;margin:0 auto 0.75rem;border:2px solid var(--pink);">
-              <img src="assets/images/team/kumarage.jpeg" alt="Kumarage"
-                style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot completed"><span style="filter:brightness(10);">✅</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Progress Presentation I</h3>
+              <span class="milestone-date">Dec 15–19, 2025</span>
+              <span class="milestone-status status-completed">Completed</span>
             </div>
-            <strong style="font-size:0.875rem;">Kumarage M.B.S.I.E</strong>
-            <p style="font-size:0.78rem;margin-top:0.2rem;">Maternal Risk ML App</p>
+            <p>Showcased first functional prototypes, UX wireframes, and preliminary ML models. Check List I submitted,
+              incorporating early feedback from supervisors and domain experts.</p>
           </div>
-          <div
-            style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1.5px solid var(--border);text-align:center;box-shadow:var(--shadow-sm);">
-            <div
-              style="width:56px;height:56px;border-radius:50%;overflow:hidden;margin:0 auto 0.75rem;border:2px solid var(--pink);">
-              <img src="assets/images/team/hasara.jpg" alt="Hasara"
-                style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot completed"><span style="filter:brightness(10);">✅</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Progress Presentation II &amp; Research Paper</h3>
+              <span class="milestone-date">March 2026</span>
+              <span class="milestone-status status-completed">Completed</span>
             </div>
-            <strong style="font-size:0.875rem;">Hasara M.A.H</strong>
-            <p style="font-size:0.78rem;margin-top:0.2rem;">Infant AI Monitoring</p>
+            <p>Refined systems demonstrated incorporating deep panel feedback. Working research paper draft prepared and
+              Check List II completed prior to submission. Core systems are structurally verified and operational.</p>
           </div>
-          <div
-            style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1.5px solid var(--border);text-align:center;box-shadow:var(--shadow-sm);">
-            <div
-              style="width:56px;height:56px;border-radius:50%;overflow:hidden;margin:0 auto 0.75rem;border:2px solid var(--pink);">
-              <img src="assets/images/team/thennakoon.jpg" alt="Thennakoon"
-                style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot completed"><span style="filter:brightness(10);">✅</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Draft Thesis &amp; Website</h3>
+              <span class="milestone-date">April 26, 2026</span>
+              <span class="milestone-status status-completed">Completed</span>
             </div>
-            <strong style="font-size:0.875rem;">Thennakoon T.A.K.K</strong>
-            <p style="font-size:0.78rem;margin-top:0.2rem;">CTG Fetal Assessment</p>
+            <p>Submission of the full Draft Thesis documenting methodology and technical developments across ML, VR, and
+              app platforms. The final Midwify website showcasing the research components was also submitted by this
+              date.</p>
+          </div>
+        </div>
+
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot"><span>🎓</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Final Presentation &amp; Viva</h3>
+              <span class="milestone-date">April 27 – May 06, 2026</span>
+              <span class="milestone-status status-inprogress">In Progress</span>
+            </div>
+            <p>The conclusive oral examination. Each member defends their respective subsystem before the evaluation
+              panel. Concurrent submission of the Website evaluation, Logbook, and Final Checklist (April 30).</p>
+          </div>
+        </div>
+
+        <div class="milestone-item fade-in">
+          <div class="milestone-dot"><span>🏆</span></div>
+          <div class="milestone-content">
+            <div class="milestone-meta">
+              <h3>Final Deliverables</h3>
+              <span class="milestone-date">May – June 2026</span>
+              <span class="milestone-status status-upcoming">Upcoming</span>
+            </div>
+            <p>Submission of the final polished Research Paper (May 08), Final Thesis (May 13), and the evidence of
+              Research Paper publication acceptance notification by June 15.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § DOCUMENTS
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="documents">
+    <div class="container">
+      <span class="section-label" style="color:var(--pink);">Downloads</span>
+      <h2>Research Documents</h2>
+      <p>All research reports, dissertations, and project documentation for the Midwify project.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header fade-in" style="max-width:680px;margin-bottom:2rem;">
+        <span class="section-label">Milestone 1</span>
+        <h2>Project Proposal</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;" class="fade-in">
+        <div class="doc-card">
+          <div class="doc-icon pdf">📄</div>
+          <div class="doc-info">
+            <h4>Project Proposal Document</h4>
+            <p>Midwify – Digitalizing Midwifery Care (All four components combined)</p>
+          </div>
+          <a href="docs/document/2.Proposal%20Document/Proposal%20Document%20(one%20doc).pdf" class="doc-download"
+            target="_blank">PDF ↗</a>
+        </div>
+      </div>
+
+      <div class="section-header fade-in" style="max-width:680px;margin-bottom:2rem;">
+        <span class="section-label">CheckList Set 1</span>
+        <h2>Feasibility Reports</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-2 fade-in" style="margin-bottom:3rem;">
+        <div class="doc-card">
+          <div class="doc-icon pdf">📋</div>
+          <div class="doc-info">
+            <h4>Feasibility Report – Thennakoon T.A.K.K</h4>
+            <p>IT22096920 · Fetal Health Risk Assessment</p>
+          </div>
+          <a href="docs/document/3.CheckList%20Documents/CheckList%20set%201/Feasibility%20Report%20IT22096920.pdf"
+            class="doc-download" target="_blank">PDF ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf">📋</div>
+          <div class="doc-info">
+            <h4>Feasibility Report – Hasara M.A.H</h4>
+            <p>IT22262936 · AI Infant Cranial Monitoring</p>
+          </div>
+          <a href="docs/document/3.CheckList%20Documents/CheckList%20set%201/Feasibility%20Report%20IT22262936.pdf"
+            class="doc-download" target="_blank">PDF ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf">📋</div>
+          <div class="doc-info">
+            <h4>Feasibility Report – Kumarage M.B.S.I.E</h4>
+            <p>IT22606556 · ML Maternal Risk Prediction</p>
+          </div>
+          <a href="docs/document/3.CheckList%20Documents/CheckList%20set%201/Feasibility%20Report%20IT22606556.pdf"
+            class="doc-download" target="_blank">PDF ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf">📋</div>
+          <div class="doc-info">
+            <h4>Feasibility Report – Mahawegedara M.K.S.P</h4>
+            <p>IT22891372 · VR Newborn Care Training</p>
+          </div>
+          <a href="docs/document/3.CheckList%20Documents/CheckList%20set%201/Feasibility%20Report%20IT22891372.pdf"
+            class="doc-download" target="_blank">PDF ↗</a>
+        </div>
+      </div>
+
+      <div class="section-header fade-in" style="max-width:680px;margin-bottom:2rem;">
+        <span class="section-label">Milestone 4</span>
+        <h2>Draft Thesis (Individual)</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-2 fade-in">
+        <div class="doc-card">
+          <div class="doc-icon word">📝</div>
+          <div class="doc-info">
+            <h4>Draft Thesis – Thennakoon T.A.K.K</h4>
+            <p>IT22096920 · Fetal Health Risk Assessment System</p>
+          </div>
+          <a href="docs/document/4.Final%20Document/Members%20Thesis/IT22096920_Thesis_Draft.docx" class="doc-download"
+            target="_blank">DOCX ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon word">📝</div>
+          <div class="doc-info">
+            <h4>Draft Thesis – Hasara M.A.H</h4>
+            <p>IT22262936 · AI Infant Cranial Monitoring</p>
+          </div>
+          <a href="docs/document/4.Final%20Document/Members%20Thesis/IT22262936_Thesis_Draft.docx" class="doc-download"
+            target="_blank">DOCX ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon word">📝</div>
+          <div class="doc-info">
+            <h4>Draft Thesis – Kumarage M.B.S.I.E</h4>
+            <p>IT22606556 · ML Maternal Risk Prediction</p>
+          </div>
+          <a href="docs/document/4.Final%20Document/Members%20Thesis/IT22606556_Thesis_Draft.docx" class="doc-download"
+            target="_blank">DOCX ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon word">📝</div>
+          <div class="doc-info">
+            <h4>Draft Thesis – Mahawegedara M.K.S.P</h4>
+            <p>IT22891372 · VR Newborn Care Training</p>
+          </div>
+          <a href="docs/document/4.Final%20Document/Members%20Thesis/IT22891372_Thesis_Draft.docx" class="doc-download"
+            target="_blank">DOCX ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § PRESENTATIONS
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="presentations">
+    <div class="container">
+      <span class="section-label" style="color:var(--pink);">Presentations</span>
+      <h2>Research Presentations</h2>
+      <p>Slide decks and presentation materials from each major research milestone.</p>
+    </div>
+  </div>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:1.25rem;" class="fade-in">
+        <div class="doc-card">
+          <div class="doc-icon pdf" style="font-size:2rem;">📊</div>
+          <div class="doc-info">
+            <h4>Proposal Presentation — Sept 2025</h4>
+            <p>Initial proposal presentation covering research scope, methodology, and component breakdown.</p>
+          </div>
+          <a href="docs/document/2.Proposal%20Document/Proposal%20Document%20(one%20doc).pdf" class="doc-download"
+            target="_blank">View ↗</a>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf" style="font-size:2rem;">📊</div>
+          <div class="doc-info">
+            <h4>Progress Presentation I — Dec 2025</h4>
+            <p>Comprehensive status update on ML models, VR environments, and initial integration tests.</p>
+          </div>
+          <span class="doc-download" style="background:var(--muted);cursor:default;">Coming Soon</span>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf" style="font-size:2rem;">📊</div>
+          <div class="doc-info">
+            <h4>Progress Presentation II — Mar 2026</h4>
+            <p>Refined systems demonstrated incorporating deep panel feedback and final model evaluations.</p>
+          </div>
+          <span class="doc-download" style="background:var(--muted);cursor:default;">Coming Soon</span>
+        </div>
+        <div class="doc-card">
+          <div class="doc-icon pdf" style="font-size:2rem;">🎓</div>
+          <div class="doc-info">
+            <h4>Final Presentation — Apr/May 2026</h4>
+            <p>Final viva presentation covering complete system architecture, evaluation results, and contributions.</p>
+          </div>
+          <span class="doc-download" style="background:var(--muted);cursor:default;">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § GALLERY
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="gallery">
+    <div class="container">
+      <span class="section-label" style="color:var(--pink);">Fieldwork</span>
+      <h2>Research Evidence &amp; Gallery</h2>
+      <p>Visual documentation of our fieldwork, stakeholder collaboration, and prototype evaluations.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header centered fade-in">
+        <span class="section-label">Fieldwork</span>
+        <h2>Stakeholder Engagement</h2>
+        <div class="divider"></div>
+        <p>Collaborating with healthcare professionals, midwifes, and consultants to understand real-world requirements.
+        </p>
+      </div>
+      <div class="grid-2 fade-in" style="margin-bottom:5rem;">
+        <div class="card" style="padding:0; overflow:hidden;">
+          <img src="assets/images/evidence/IMG3.jpeg" alt="Expert Consultation"
+            style="width:100%; height:300px; object-fit:cover;">
+          <div style="padding:1.5rem;">
+            <h3>User Requirement Gathering</h3>
+            <p>Discussing the digital transformation of midwifery care with local clinic staff.</p>
+          </div>
+        </div>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <img src="assets/images/evidence/IMG 1.jpeg" alt="Meeting with Healthcare Professionals"
+            style="width:100%; height:300px; object-fit:cover;">
+          <div style="padding:1.5rem;">
+            <h3>Expert Consultation</h3>
+            <p>Validating research methodology and data gathering protocols with obstetric consultants.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header centered fade-in">
+        <span class="section-label">Evaluation</span>
+        <h2>User Testing &amp; Demos</h2>
+        <div class="divider"></div>
+        <p>Iterative testing of our AI, VR, and mobile prototypes with the target user base.</p>
+      </div>
+      <div class="grid-2 fade-in">
+        <div class="card" style="padding:0; overflow:hidden;">
+          <video controls style="width:100%; height:550px; object-fit:contain; background:#000;">
+            <source src="assets/images/evidence/IMG5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:1.5rem;">
+            <h3>VR Training Simulation Test</h3>
+            <p>A pilot session testing the newborn care training system using OpenXR and VR headsets.</p>
+          </div>
+        </div>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <video controls style="width:100%; height:550px; object-fit:contain; background:#000;">
+            <source src="assets/images/evidence/IMG4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="padding:1.5rem;">
+            <h3>Mobile App Usability Session</h3>
+            <p>Evaluating the maternal risk prediction and monitoring application with end-users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § ABOUT
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="about">
+    <div class="container">
+      <span class="section-label" style="color:var(--pink);">The Team</span>
+      <h2>Meet the Team</h2>
+      <p>Four BSc IT students and their academic supervisors behind the Midwify research project.</p>
+    </div>
+  </div>
+
+  <section class="section section-alt">
+    <div class="container">
+      <!-- Supervisors -->
+      <div class="section-header centered fade-in">
+        <span class="section-label">Academic Supervisors</span>
+        <h2>Our Supervisors</h2>
+        <div class="divider"></div>
+        <p>Guiding the research team through the Department of Information Technology at SLIIT Sri Lanka.</p>
+      </div>
+      <div class="grid-2 fade-in" style="max-width:860px;margin:0 auto 4.5rem;">
+        <div class="card" style="text-align:center;border-top:4px solid var(--pink);">
+          <img src="assets/images/team/Didula.jpg" alt="Mr. Didula Thanaweera Araghchi"
+            style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;border:3px solid var(--pink);display:block;" />
+          <h3>Mr. Didula Thanaweera Araghchi</h3>
+          <p style="color:var(--pink);font-weight:700;font-size:0.85rem;margin:0.3rem 0 0.75rem;">Main Supervisor</p>
+          <p style="font-size:0.875rem;">Department of Information Technology, Faculty of Computing, SLIIT Sri Lanka.
+          </p>
+        </div>
+        <div class="card" style="text-align:center;border-top:4px solid var(--pink);">
+          <img src="assets/images/team/Narmada.jpg" alt="Mrs. Narmada Gamage"
+            style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;border:3px solid var(--pink);display:block;" />
+          <h3>Mrs. Narmada Gamage</h3>
+          <p style="color:var(--pink);font-weight:700;font-size:0.85rem;margin:0.3rem 0 0.75rem;">Co-Supervisor</p>
+          <p style="font-size:0.875rem;">Department of Information Technology, Faculty of Computing, SLIIT Sri Lanka.
+          </p>
+        </div>
+      </div>
+
+      <!-- Students -->
+      <div class="section-header centered fade-in">
+        <span class="section-label">Research Team</span>
+        <h2>Student Researchers</h2>
+        <div class="divider"></div>
+        <p>BSc IT (Interactive Media), Faculty of Computing, Sri Lanka Institute of Information Technology</p>
+      </div>
+      <div class="grid-4 fade-in">
+        <div class="team-card">
+          <img class="team-photo" src="assets/images/team/mahawagedara.jpg" alt="Mahawegedara M.K.S.P" />
+          <div class="team-card-body">
+            <h3>Mahawegedara M.K.S.P</h3>
+            <div class="team-id">IT22891372</div>
+            <div class="team-role">Leads the VR newborn training simulation. Designs the Unity/OpenXR VR environment
+              with Blender assets for immersive newborn care training.</div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="component-tag">🥽
+                VR</span><span class="component-tag">🎮 Unity</span></div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="assets/images/team/kumarage.jpeg" alt="Kumarage M.B.S.I.E" />
+          <div class="team-card-body">
+            <h3>Kumarage M.B.S.I.E</h3>
+            <div class="team-id">IT22606556</div>
+            <div class="team-role">Leads the ML-based maternal risk prediction mobile app. Trains Random Forest and
+              XGBoost models on clinical datasets and deploys them via TensorFlow Lite in a Flutter app.</div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="component-tag">📱
+                Flutter</span><span class="component-tag">🤖 ML</span></div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="assets/images/team/hasara.jpg" alt="Hasara M.A.H" />
+          <div class="team-card-body">
+            <h3>Hasara M.A.H</h3>
+            <div class="team-id">IT22262936</div>
+            <div class="team-role">Develops the AI infant cranial &amp; posture monitoring app. Builds a CNN model
+              assessing cranial shape using CVAI and CI indices, delivered via a bilingual React Native app.</div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="component-tag">👶
+                CNN</span><span class="component-tag">🌐 Bilingual</span></div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="assets/images/team/thennakoon.jpg" alt="Thennakoon T.A.K.K" />
+          <div class="team-card-body">
+            <h3>Thennakoon T.A.K.K</h3>
+            <div class="team-id">IT22096920</div>
+            <div class="team-role">Develops the automated fetal health risk assessment system using OpenCV, PyTesseract,
+              and a SMOTE-enhanced Random Forest classifier.</div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="component-tag">📈 CTG
+                Analysis</span><span class="component-tag">🤖 Random Forest</span><span class="component-tag">📱
+                Flutter</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spa-section-divider"></div>
+
+  <!-- ══════════════════════════════════════
+       § CONTACT
+  ══════════════════════════════════════ -->
+  <div class="section-page-hero spa-section" id="contact">
+    <div class="container">
+      <span class="section-label" style="color:var(--pink);">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p>Questions about our research? We'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:3rem;align-items:start;">
+        <div class="fade-in">
+          <span class="section-label">Send a Message</span>
+          <h2>Get In Touch</h2>
+          <div class="divider"></div>
+          <form class="contact-form" style="display:flex;flex-direction:column;gap:1.1rem;margin-top:1.5rem;"
+            onsubmit="return false;">
+            <div>
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" placeholder="your@email.com" />
+            </div>
+            <div>
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" placeholder="Research inquiry, collaboration, etc." />
+            </div>
+            <div>
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message →</button>
+          </form>
+        </div>
+        <div class="fade-in" style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>SLIIT Sri Lanka</h3>
+            <p>Sri Lanka Institute of Information Technology<br>New Kandy Rd, Malabe 10115, Sri Lanka</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">👨‍🏫</div>
+            <h3>Supervisors</h3>
+            <p><strong>Mr. Didula Thanaweera Araghchi</strong> — Main Supervisor<br><strong>Mrs. Narmada Gamage</strong>
+              — Co-Supervisor<br>Dept. of Information Technology, SLIIT</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Research Group</h3>
+            <p>BSc IT (Interactive Media)<br>Faculty of Computing | Academic Year 2025<br>Project Code: RP-25-26J-426
+            </p>
           </div>
         </div>
       </div>
@@ -386,21 +1065,21 @@
           </p>
         </div>
         <div class="footer-col">
-          <h4>Pages</h4>
+          <h4>Sections</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="domain.html">Domain</a></li>
-            <li><a href="milestones.html">Milestones</a></li>
-            <li><a href="documents.html">Documents</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#domain">Domain</a></li>
+            <li><a href="#milestones">Milestones</a></li>
+            <li><a href="#documents">Documents</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>More</h4>
           <ul>
-            <li><a href="presentations.html">Presentations</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#presentations">Presentations</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -415,12 +1094,46 @@
       </div>
       <div class="footer-bottom">
         <span>© 2025 Midwify Research Group · SLIIT Sri Lanka</span>
-        <span>Supervised by <a href="about.html">Mr. D. Thanaweera Araghchi & Mrs. N. Gamage</a></span>
+        <span>Supervised by Mr. D. Thanaweera Araghchi &amp; Mrs. N. Gamage</span>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // ── Scroll-spy: highlight active nav link ──
+    const sections = document.querySelectorAll('.spa-section, #home, #abstract, #components, #significance, #team-preview');
+    const navLinks = document.querySelectorAll('.nav-menu a[data-section]');
+
+    const sectionMap = {
+      home: 'home', abstract: 'home', components: 'home', significance: 'home', 'team-preview': 'home',
+      domain: 'domain', milestones: 'milestones', documents: 'documents',
+      presentations: 'presentations', gallery: 'gallery', about: 'about', contact: 'contact'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const active = sectionMap[id] || id;
+          navLinks.forEach(a => {
+            a.classList.toggle('spa-active', a.dataset.section === active);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    document.querySelectorAll('section[id], div[id].spa-section, div[id].section-page-hero').forEach(el => observer.observe(el));
+
+    // ── Close mobile menu on anchor click ──
+    navLinks.forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('open');
+        document.getElementById('overlay').classList.remove('active');
+        document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 
 </html>
